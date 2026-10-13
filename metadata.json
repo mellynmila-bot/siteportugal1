@@ -1,0 +1,6 @@
+{
+  "name": "Nailz by Cataleya | Nail Art Pombal",
+  "description": "Website oficial de Nailz by Cataleya em Pombal, Portugal. Especialista em Nail Art exclusiva, banho de gel, nail art 3D e extensões com agendamento direto e portfólio completo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

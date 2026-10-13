@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Syne', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Subtle Checkered Patterns (Streetwear Y2K aesthetic) */
+.bg-checkered-dark {
+  background-image: 
+    linear-gradient(45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, 0.02) 75%), 
+    linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, 0.02) 75%);
+  background-size: 32px 32px;
+  background-position: 0 0, 0 16px, 16px -16px, -16px 0px;
+}
+
+.bg-checkered-light {
+  background-image: 
+    linear-gradient(45deg, rgba(0, 0, 0, 0.035) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(0, 0, 0, 0.035) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, rgba(0, 0, 0, 0.035) 75%), 
+    linear-gradient(-45deg, transparent 75%, rgba(0, 0, 0, 0.035) 75%);
+  background-size: 28px 28px;
+  background-position: 0 0, 0 14px, 14px -14px, -14px 0px;
+}
+
+/* Technical grid lines */
+.bg-tech-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Neo-Brutalist Box Shadow System */
+.neo-btn-purple {
+  background-color: #A855F7;
+  color: #FFFFFF;
+  border: 2px solid #000000;
+  box-shadow: 4px 4px 0px #000000;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.neo-btn-purple:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+  background-color: #9333EA;
+}
+.neo-btn-purple:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #000000;
+}
+
+.neo-btn-black {
+  background-color: #121212;
+  color: #FFFFFF;
+  border: 2px solid #A855F7;
+  box-shadow: 4px 4px 0px #A855F7;
+  transition: all 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.neo-btn-black:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #A855F7;
+  background-color: #1a1a1a;
+}
+.neo-btn-black:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #A855F7;
+}
+
+.neo-card {
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.8);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.neo-card:hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 6px 6px 0px #A855F7;
+}
+
+.neo-card-light {
+  border: 2px solid #121212;
+  box-shadow: 6px 6px 0px #121212;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.neo-card-light:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 8px 8px 0px #A855F7;
+}
+
+/* Sticker Cut effect */
+.sticker-frame {
+  border: 3px solid #FFFFFF;
+  box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.7);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sticker-frame:hover {
+  transform: scale(1.02) rotate(-0.5deg);
+}
+
+/* Infinite Marquee */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 26s linear infinite;
+}
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 16s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #121212;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #A855F7;
+}
