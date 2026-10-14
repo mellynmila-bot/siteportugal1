@@ -52,14 +52,9 @@ export const ReviewsSection: React.FC<ReviewsSectionProps> = ({ t }) => {
               <div>
                 {/* Review Header */}
                 <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
-                  <div className="flex items-center gap-2">
-                    <div className="w-9 h-9 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center font-bold text-white text-xs font-mono">
-                      {review.name.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="text-sm font-extrabold text-white">{review.name}</p>
-                      <p className="text-[11px] text-zinc-400">{review.date}</p>
-                    </div>
+                  <div>
+                    <p className="text-sm font-extrabold text-white">{review.name}</p>
+                    <p className="text-[11px] text-zinc-400">{review.date}</p>
                   </div>
 
                   {/* Stars */}

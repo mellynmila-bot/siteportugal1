@@ -75,8 +75,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                 className="group bg-[#18181b] border-2 border-zinc-800 hover:border-[#A855F7] shadow-[6px_6px_0px_#000000] hover:shadow-[6px_6px_0px_#A855F7] transition-all duration-200 flex flex-col justify-between overflow-hidden"
               >
                 <div>
-                  {/* Image container with navigation arrows */}
-                  <div className="relative aspect-[16/10] overflow-hidden bg-zinc-950 border-b-2 border-zinc-800 select-none">
+                  {/* Image container with navigation arrows (enlarged for high visual detail) */}
+                  <div className="relative aspect-[4/3] min-h-[290px] sm:min-h-[360px] w-full overflow-hidden bg-zinc-950 border-b-2 border-zinc-800 select-none">
                     <img
                       src={currentImg}
                       alt={translatedService.name}

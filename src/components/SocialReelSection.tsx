@@ -1,5 +1,5 @@
 import React from 'react';
-import { Instagram, Video, ExternalLink, Share2, Play } from 'lucide-react';
+import { Instagram, Video, ExternalLink, Share2 } from 'lucide-react';
 import { BUSINESS_INFO } from '../data/content';
 import { SparkleIcon } from './SparkleIcon';
 
@@ -28,144 +28,92 @@ export const SocialReelSection: React.FC<SocialReelSectionProps> = ({ t }) => {
           </p>
         </div>
 
-        {/* Centerpiece Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center max-w-5xl mx-auto">
+        {/* 3 Official Social Channels Grid (Instagram first, then TikTok, then Facebook) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           
-          {/* Reel Container: HIDDEN on mobile as requested, visible only on lg screens */}
-          <div className="hidden lg:flex lg:col-span-6 justify-center">
-            <div className="relative w-full max-w-sm bg-[#18181b] p-3 border-4 border-white shadow-[8px_8px_0px_#A855F7]">
-              
-              {/* Header badge */}
-              <div className="flex items-center justify-between pb-2 mb-2 border-b border-zinc-800 text-xs font-mono">
-                <span className="flex items-center gap-1.5 text-white font-bold">
-                  <Instagram size={14} className="text-[#A855F7]" />
-                  <span>@nailzbycataleya</span>
-                </span>
-                <span className="text-zinc-400">Reel Oficial</span>
+          {/* 1. Instagram: First */}
+          <a
+            href={BUSINESS_INFO.instagramUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block p-6 bg-[#18181b] border-2 border-zinc-800 hover:border-[#A855F7] shadow-[5px_5px_0px_#000000] hover:shadow-[5px_5px_0px_#A855F7] transition-all flex flex-col justify-between"
+          >
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="p-3 bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 text-white border-2 border-black shadow-[2px_2px_0px_#000000] shrink-0">
+                  <Instagram size={24} />
+                </div>
+                <ExternalLink size={18} className="text-zinc-500 group-hover:text-white transition-colors" />
               </div>
-
-              {/* Instagram Reel Iframe */}
-              <div className="relative aspect-[9/16] w-full bg-black border-2 border-zinc-800 overflow-hidden flex items-center justify-center">
-                <iframe
-                  src={BUSINESS_INFO.reelEmbedUrl}
-                  title="Instagram Reel - Nailz by Cataleya"
-                  className="w-full h-full border-0"
-                  allowTransparency={true}
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  scrolling="no"
-                  loading="lazy"
-                />
+              <div>
+                <p className="font-extrabold text-white text-lg group-hover:text-[#A855F7] transition-colors font-display">
+                  Instagram
+                </p>
+                <p className="text-xs text-zinc-400 font-mono mt-0.5">
+                  {BUSINESS_INFO.instagramHandle}
+                </p>
               </div>
+            </div>
+            <p className="text-xs text-zinc-400 pt-4 mt-4 border-t border-zinc-800/80">
+              Fotos diárias, novos designs e inspirações em Pombal.
+            </p>
+          </a>
 
-              {/* Action bar below video */}
-              <div className="mt-3 flex items-center justify-between pt-2 border-t border-zinc-800">
-                <a
-                  href={BUSINESS_INFO.reelUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs font-bold text-zinc-300 hover:text-[#A855F7] flex items-center gap-1.5 transition-colors"
-                >
-                  <Play size={12} className="text-[#A855F7] fill-[#A855F7]" />
-                  <span>{t.socialSection.reelWatchBtn}</span>
-                  <ExternalLink size={12} />
-                </a>
-
-                <div className="flex items-center gap-2 text-xs text-zinc-400 font-mono">
-                  <span>Pombal, PT</span>
+          {/* 2. TikTok: Second */}
+          <a
+            href={BUSINESS_INFO.tiktokUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block p-6 bg-[#18181b] border-2 border-zinc-800 hover:border-[#A855F7] shadow-[5px_5px_0px_#000000] hover:shadow-[5px_5px_0px_#A855F7] transition-all flex flex-col justify-between"
+          >
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="p-3 bg-black text-cyan-400 border-2 border-zinc-700 shadow-[2px_2px_0px_#000000] shrink-0">
+                  <Video size={24} />
                 </div>
+                <ExternalLink size={18} className="text-zinc-500 group-hover:text-white transition-colors" />
               </div>
-
+              <div>
+                <p className="font-extrabold text-white text-lg group-hover:text-[#A855F7] transition-colors font-display">
+                  TikTok
+                </p>
+                <p className="text-xs text-zinc-400 font-mono mt-0.5">
+                  {BUSINESS_INFO.tiktokHandle}
+                </p>
+              </div>
             </div>
-          </div>
+            <p className="text-xs text-zinc-400 pt-4 mt-4 border-t border-zinc-800/80">
+              Vídeos curtos, tutoriais e bastidores das técnicas.
+            </p>
+          </a>
 
-          {/* Social Channels Callout & Links */}
-          <div className="lg:col-span-6 space-y-6 w-full">
-            
-            {/* Title & Desc: HIDDEN on mobile as requested, visible only on lg screens */}
-            <div className="hidden lg:block space-y-3">
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-display">
-                {t.socialSection.reelTitle}
-              </h3>
-              <p className="text-sm sm:text-base text-zinc-300 leading-relaxed">
-                {t.socialSection.reelDesc}
-              </p>
+          {/* 3. Facebook: Third */}
+          <a
+            href={BUSINESS_INFO.facebookUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group block p-6 bg-[#18181b] border-2 border-zinc-800 hover:border-[#A855F7] shadow-[5px_5px_0px_#000000] hover:shadow-[5px_5px_0px_#A855F7] transition-all flex flex-col justify-between"
+          >
+            <div className="space-y-4">
+              <div className="flex items-center justify-between">
+                <div className="p-3 bg-[#1877F2] text-white border-2 border-black shadow-[2px_2px_0px_#000000] shrink-0">
+                  <Share2 size={24} />
+                </div>
+                <ExternalLink size={18} className="text-zinc-500 group-hover:text-white transition-colors" />
+              </div>
+              <div>
+                <p className="font-extrabold text-white text-lg group-hover:text-[#A855F7] transition-colors font-display">
+                  Facebook
+                </p>
+                <p className="text-xs text-zinc-400 font-mono mt-0.5">
+                  Nailz by Cataleya
+                </p>
+              </div>
             </div>
-
-            {/* Neo-brutalist Social Cards */}
-            <div className="space-y-4 pt-2">
-              
-              {/* Instagram card: HIDDEN on mobile as requested, visible on desktop */}
-              <a
-                href={BUSINESS_INFO.instagramUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden lg:block group p-4 bg-[#18181b] border-2 border-zinc-800 hover:border-[#A855F7] shadow-[4px_4px_0px_#000000] hover:shadow-[4px_4px_0px_#A855F7] transition-all"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 bg-gradient-to-tr from-yellow-500 via-pink-500 to-purple-600 text-white border border-black shrink-0">
-                      <Instagram size={20} />
-                    </div>
-                    <div>
-                      <p className="font-extrabold text-white text-sm sm:text-base group-hover:text-[#A855F7] transition-colors">
-                        Instagram
-                      </p>
-                      <p className="text-xs text-zinc-400">{BUSINESS_INFO.instagramHandle}</p>
-                    </div>
-                  </div>
-                  <ExternalLink size={16} className="text-zinc-500 group-hover:text-white transition-colors" />
-                </div>
-              </a>
-
-              {/* TikTok: Visible on all devices */}
-              <a
-                href={BUSINESS_INFO.tiktokUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block p-4 bg-[#18181b] border-2 border-zinc-800 hover:border-[#A855F7] shadow-[4px_4px_0px_#000000] hover:shadow-[4px_4px_0px_#A855F7] transition-all"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 bg-black text-cyan-400 border border-zinc-700 shrink-0">
-                      <Video size={20} />
-                    </div>
-                    <div>
-                      <p className="font-extrabold text-white text-sm sm:text-base group-hover:text-[#A855F7] transition-colors">
-                        TikTok
-                      </p>
-                      <p className="text-xs text-zinc-400">{BUSINESS_INFO.tiktokHandle}</p>
-                    </div>
-                  </div>
-                  <ExternalLink size={16} className="text-zinc-500 group-hover:text-white transition-colors" />
-                </div>
-              </a>
-
-              {/* Facebook: Visible on all devices */}
-              <a
-                href={BUSINESS_INFO.facebookUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block p-4 bg-[#18181b] border-2 border-zinc-800 hover:border-[#A855F7] shadow-[4px_4px_0px_#000000] hover:shadow-[4px_4px_0px_#A855F7] transition-all"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-3">
-                    <div className="p-2.5 bg-[#1877F2] text-white border border-black shrink-0">
-                      <Share2 size={20} />
-                    </div>
-                    <div>
-                      <p className="font-extrabold text-white text-sm sm:text-base group-hover:text-[#A855F7] transition-colors">
-                        Facebook
-                      </p>
-                      <p className="text-xs text-zinc-400">Nailz by Cataleya Oficial</p>
-                    </div>
-                  </div>
-                  <ExternalLink size={16} className="text-zinc-500 group-hover:text-white transition-colors" />
-                </div>
-              </a>
-
-            </div>
-
-          </div>
+            <p className="text-xs text-zinc-400 pt-4 mt-4 border-t border-zinc-800/80">
+              Página oficial, novidades e contactos atualizados.
+            </p>
+          </a>
 
         </div>
 

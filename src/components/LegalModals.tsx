@@ -52,7 +52,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
               <h4 className="font-bold text-white pt-2">2. Finalidade e Conservação:</h4>
               <p>Os dados recolhidos através do WhatsApp ou formulário deste website não são partilhados nem comercializados a terceiros e são mantidos unicamente pelo período estritamente necessário à gestão de marcações e histórico de serviços.</p>
               <h4 className="font-bold text-white pt-2">3. Direitos do Titular:</h4>
-              <p>Tem o direito de aceder, retificar ou solicitar a eliminação dos seus dados a qualquer momento contactando-nos através do e-mail oficial [nailzbycataleya@gmail.com] ou do telefone [+351 910 850 882].</p>
+              <p>Tem o direito de aceder, retificar ou solicitar a eliminação dos seus dados a qualquer momento contactando-nos através do e-mail oficial [nailzbycataleya@hotmail.com] ou do telefone [+351 910 850 882].</p>
             </>
           )}
 
