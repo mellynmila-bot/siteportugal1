@@ -48,17 +48,17 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
   const featureIcons = [ShieldCheck, Lock, Sparkles, MapPin];
 
   return (
-    <section id="estudio" className="py-16 sm:py-20 bg-[#0d0d0d] relative bg-checkered-dark border-t-2 border-zinc-900">
+    <section id="estudio" className="py-20 sm:py-24 bg-[#0A0A0A] relative text-white border-t border-zinc-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900 border border-zinc-700 text-[#A855F7] text-xs font-bold uppercase tracking-widest shadow-[2px_2px_0px_#A855F7]">
-            <SparkleIcon size={12} className="text-[#A855F7]" />
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#141414] border border-[#D4AF37]/40 text-[#D4AF37] text-xs font-semibold uppercase tracking-widest">
+            <SparkleIcon size={12} color="#D4AF37" />
             <span>{t.studioSection.kicker}</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-display">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-tight font-display">
             {t.studioSection.title}
           </h2>
 
@@ -67,14 +67,14 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
           </p>
         </div>
 
-        {/* Carousel Showcase for the 3 Studio Photos (Click to expand) */}
+        {/* Carousel Showcase for the 3 Studio Photos (Click to expand, no titles over photo) */}
         <div className="mb-16">
-          <div className="relative max-w-4xl mx-auto bg-[#18181b] p-3 sm:p-4 border-4 border-white shadow-[8px_8px_0px_#A855F7]">
+          <div className="relative max-w-4xl mx-auto bg-[#141414] p-3 border border-[#D4AF37]/40 shadow-2xl">
             
             {/* Slide Image Container */}
             <div
               onClick={() => setIsModalOpen(true)}
-              className="relative aspect-[16/10] sm:aspect-[16/9] overflow-hidden bg-black border-2 border-black cursor-zoom-in group select-none"
+              className="relative aspect-[16/10] sm:aspect-[16/9] overflow-hidden bg-black cursor-zoom-in group select-none"
               title="Clica para ampliar a fotografia"
             >
               {STUDIO_PHOTOS.map((photo, index) => (
@@ -87,7 +87,7 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
                   <img
                     src={photo.url}
                     alt="Espaço Nailz by Cataleya em Pombal"
-                    className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                    className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                     loading="lazy"
                     decoding="async"
@@ -96,8 +96,8 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
               ))}
 
               {/* Expand badge icon overlay */}
-              <div className="absolute top-3 right-3 z-20 p-2 bg-black/80 hover:bg-[#A855F7] text-white border border-white shadow-[2px_2px_0px_#000000] opacity-90 group-hover:opacity-100 transition-all flex items-center gap-1.5 text-xs font-bold font-mono">
-                <Maximize2 size={15} />
+              <div className="absolute top-3.5 right-3.5 z-20 px-3 py-1.5 bg-black/80 hover:bg-[#D4AF37] hover:text-black text-white border border-[#D4AF37]/50 shadow-md opacity-90 group-hover:opacity-100 transition-all flex items-center gap-1.5 text-xs font-mono font-medium">
+                <Maximize2 size={14} />
                 <span className="hidden sm:inline">Ampliar</span>
               </div>
 
@@ -105,7 +105,7 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
               <button
                 type="button"
                 onClick={(e) => handlePrev(e)}
-                className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-2.5 bg-black/80 hover:bg-[#A855F7] text-white border-2 border-white shadow-[2px_2px_0px_#000000] transition-colors cursor-pointer"
+                className="absolute left-3.5 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3 bg-black/80 hover:bg-[#D4AF37] hover:text-black text-white border border-[#D4AF37]/40 transition-colors cursor-pointer shadow-md"
                 aria-label="Foto anterior"
               >
                 <ChevronLeft size={20} />
@@ -114,7 +114,7 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
               <button
                 type="button"
                 onClick={(e) => handleNext(e)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-2.5 bg-black/80 hover:bg-[#A855F7] text-white border-2 border-white shadow-[2px_2px_0px_#000000] transition-colors cursor-pointer"
+                className="absolute right-3.5 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3 bg-black/80 hover:bg-[#D4AF37] hover:text-black text-white border border-[#D4AF37]/40 transition-colors cursor-pointer shadow-md"
                 aria-label="Foto seguinte"
               >
                 <ChevronRight size={20} />
@@ -122,7 +122,7 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
             </div>
 
             {/* Slide Navigation Dots / Indicators */}
-            <div className="mt-3 flex items-center justify-between px-2 text-xs font-mono">
+            <div className="mt-3.5 flex items-center justify-between px-2 text-xs font-mono">
               <span className="text-zinc-400">
                 Foto {currentSlide + 1} de {STUDIO_PHOTOS.length} • Clica para ampliar
               </span>
@@ -133,10 +133,10 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
                     key={idx}
                     type="button"
                     onClick={() => setCurrentSlide(idx)}
-                    className={`h-2.5 transition-all cursor-pointer ${
+                    className={`h-2 transition-all cursor-pointer ${
                       idx === currentSlide
-                        ? 'w-8 bg-[#A855F7] border border-black'
-                        : 'w-2.5 bg-zinc-700 hover:bg-zinc-500'
+                        ? 'w-7 bg-[#D4AF37]'
+                        : 'w-2 bg-zinc-700 hover:bg-zinc-500'
                     }`}
                     aria-label={`Ir para foto ${idx + 1}`}
                   />
@@ -154,16 +154,16 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
             return (
               <div
                 key={idx}
-                className="bg-[#18181b] p-6 border-2 border-zinc-800 hover:border-[#A855F7] shadow-[4px_4px_0px_#000000] transition-all flex flex-col justify-between"
+                className="bg-[#141414] p-7 border border-zinc-800 hover:border-[#D4AF37]/60 shadow-lg transition-all duration-300 flex flex-col justify-between"
               >
-                <div className="space-y-3">
-                  <div className="p-3 bg-zinc-900 text-[#A855F7] border border-zinc-700 inline-block shadow-[2px_2px_0px_#A855F7]">
-                    <Icon size={22} />
+                <div className="space-y-4">
+                  <div className="p-3 bg-black text-[#D4AF37] border border-[#D4AF37]/30 inline-block shadow-sm">
+                    <Icon size={20} />
                   </div>
-                  <h3 className="text-lg font-extrabold text-white font-display">
+                  <h3 className="text-xl font-normal text-white font-display">
                     {feat.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-normal">
                     {feat.desc}
                   </p>
                 </div>
@@ -173,24 +173,24 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
         </div>
 
         {/* Integrated Google Maps Section */}
-        <div className="bg-[#18181b] border-4 border-white shadow-[8px_8px_0px_#000000] overflow-hidden">
+        <div className="bg-[#141414] border border-[#D4AF37]/30 shadow-2xl overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-12">
             
             {/* Map Info Box */}
-            <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-zinc-950 border-b-2 lg:border-b-0 lg:border-r-2 border-zinc-800">
+            <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between bg-[#111111] border-b lg:border-b-0 lg:border-r border-zinc-800">
               <div className="space-y-4">
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-zinc-900 border border-zinc-700 text-[#A855F7] text-xs font-mono font-bold">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-black border border-[#D4AF37]/40 text-[#D4AF37] text-xs font-mono font-medium">
                   <MapPin size={12} />
                   <span>LOCALIZAÇÃO OFICIAL</span>
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-extrabold text-white font-display">
+                <h3 className="text-2xl sm:text-3xl font-normal text-white font-display">
                   Vem Visitar-nos em Pombal
                 </h3>
 
                 <div className="space-y-2 text-sm text-zinc-300">
-                  <p className="font-bold text-white flex items-center gap-2">
-                    <MapPin size={16} className="text-[#A855F7]" />
+                  <p className="font-semibold text-white flex items-center gap-2">
+                    <MapPin size={16} className="text-[#D4AF37]" />
                     <span>{BUSINESS_INFO.address}</span>
                   </p>
                   <p className="text-xs text-zinc-400">
@@ -204,7 +204,7 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
                   href={BUSINESS_INFO.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="neo-btn-purple w-full flex items-center justify-center gap-2 py-3.5 px-4 text-xs sm:text-sm font-extrabold uppercase tracking-wide text-center"
+                  className="luxury-btn-gold w-full flex items-center justify-center gap-2.5 py-3.5 px-4 text-xs font-bold uppercase tracking-widest text-center"
                 >
                   <Navigation size={16} />
                   <span>{t.studioSection.openMapsBtn}</span>
@@ -228,9 +228,9 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
               />
               
               {/* Corner Watermark Card */}
-              <div className="absolute top-3 right-3 bg-black/90 border border-zinc-700 px-3 py-1.5 text-xs text-white flex items-center gap-2 pointer-events-none shadow-[2px_2px_0px_#000000]">
+              <div className="absolute top-3 right-3 bg-black/90 border border-zinc-700 px-3 py-1.5 text-xs text-white flex items-center gap-2 pointer-events-none shadow-md">
                 <span className="w-2 h-2 rounded-full bg-emerald-400" />
-                <span className="font-bold font-mono">Pombal, Portugal</span>
+                <span className="font-medium font-mono text-zinc-300">Pombal, Portugal</span>
               </div>
             </div>
 
@@ -251,14 +251,14 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
           >
             {/* Top Close Bar */}
             <div className="w-full flex items-center justify-between pb-3 px-1 text-white">
-              <span className="px-2.5 py-1 bg-zinc-900 border border-zinc-700 text-xs font-mono font-bold text-[#A855F7]">
+              <span className="px-3 py-1 bg-[#141414] border border-[#D4AF37]/50 text-xs font-mono font-bold text-[#D4AF37]">
                 Espaço Nailz by Cataleya • Foto {currentSlide + 1} / {STUDIO_PHOTOS.length}
               </span>
 
               <button
                 type="button"
                 onClick={() => setIsModalOpen(false)}
-                className="neo-btn-black p-2 text-white hover:text-[#A855F7] flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider cursor-pointer"
+                className="p-2 text-zinc-300 hover:text-[#D4AF37] flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest cursor-pointer transition-colors"
                 aria-label="Fechar"
               >
                 <X size={20} />
@@ -267,7 +267,7 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
             </div>
 
             {/* Media Presentation Box */}
-            <div className="relative w-full max-h-[82vh] bg-black border-4 border-white shadow-[8px_8px_0px_#A855F7] flex items-center justify-center overflow-hidden">
+            <div className="relative w-full max-h-[82vh] bg-black border border-[#D4AF37]/50 shadow-2xl flex items-center justify-center overflow-hidden">
               <img
                 src={STUDIO_PHOTOS[currentSlide].url}
                 alt="Espaço Nailz by Cataleya Ampliado"
@@ -280,7 +280,7 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
               <button
                 type="button"
                 onClick={(e) => handlePrev(e)}
-                className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 bg-black/85 hover:bg-[#A855F7] text-white border-2 border-white shadow-[2px_2px_0px_#000000] transition-colors cursor-pointer"
+                className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 bg-black/85 hover:bg-[#D4AF37] hover:text-black text-white border border-[#D4AF37]/40 transition-colors cursor-pointer shadow-md"
                 aria-label="Foto anterior"
               >
                 <ChevronLeft size={24} />
@@ -290,7 +290,7 @@ export const StudioSection: React.FC<StudioSectionProps> = ({ t }) => {
               <button
                 type="button"
                 onClick={(e) => handleNext(e)}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 bg-black/85 hover:bg-[#A855F7] text-white border-2 border-white shadow-[2px_2px_0px_#000000] transition-colors cursor-pointer"
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 bg-black/85 hover:bg-[#D4AF37] hover:text-black text-white border border-[#D4AF37]/40 transition-colors cursor-pointer shadow-md"
                 aria-label="Foto seguinte"
               >
                 <ChevronRight size={24} />

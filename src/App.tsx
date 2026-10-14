@@ -41,7 +41,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#121212] text-white flex flex-col font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#A855F7] selection:text-white">
+    <div className="min-h-screen bg-[#0A0A0A] text-white flex flex-col font-['Plus_Jakarta_Sans',sans-serif] selection:bg-[#D4AF37] selection:text-black">
       {/* Top Bar Navigation */}
       <Navbar
         currentLang={lang}

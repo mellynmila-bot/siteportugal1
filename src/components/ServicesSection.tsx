@@ -37,27 +37,27 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
   };
 
   return (
-    <section id="servicos" className="py-16 sm:py-20 bg-[#121212] relative">
+    <section id="servicos" className="py-20 sm:py-24 bg-white text-stone-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900 border border-zinc-700 text-[#A855F7] text-xs font-bold uppercase tracking-widest shadow-[2px_2px_0px_#A855F7]">
-            <SparkleIcon size={12} className="text-[#A855F7]" />
+        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-amber-50 border border-[#D4AF37]/50 text-[#B38715] text-xs font-bold uppercase tracking-widest">
+            <SparkleIcon size={12} color="#B38715" />
             <span>{t.servicesSection.kicker}</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-display">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-stone-950 tracking-tight font-display">
             {t.servicesSection.title}
           </h2>
 
-          <p className="text-sm sm:text-base text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-base text-stone-600 max-w-2xl mx-auto leading-relaxed">
             {t.servicesSection.subtitle}
           </p>
         </div>
 
         {/* 4 Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
           {SERVICES.map((service) => {
             const translatedService = t.servicesSection.items[service.id] || {
               name: service.name,
@@ -72,17 +72,17 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
             return (
               <div
                 key={service.id}
-                className="group bg-[#18181b] border-2 border-zinc-800 hover:border-[#A855F7] shadow-[6px_6px_0px_#000000] hover:shadow-[6px_6px_0px_#A855F7] transition-all duration-200 flex flex-col justify-between overflow-hidden"
+                className="group bg-white border border-stone-200 hover:border-[#D4AF37] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
               >
                 <div>
                   {/* Image container with navigation arrows (enlarged for high visual detail) */}
-                  <div className="relative aspect-[4/3] min-h-[290px] sm:min-h-[360px] w-full overflow-hidden bg-zinc-950 border-b-2 border-zinc-800 select-none">
+                  <div className="relative aspect-[4/3] min-h-[300px] sm:min-h-[380px] w-full overflow-hidden bg-stone-100 border-b border-stone-200 select-none">
                     <img
                       src={currentImg}
                       alt={translatedService.name}
                       decoding="async"
                       loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
                       referrerPolicy="no-referrer"
                     />
 
@@ -91,7 +91,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                       <button
                         type="button"
                         onClick={(e) => handlePrevImage(service.id, images.length, e)}
-                        className="absolute left-2.5 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-2.5 bg-black/85 hover:bg-[#A855F7] text-white border-2 border-white shadow-[2px_2px_0px_#000000] transition-colors"
+                        className="absolute left-3 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3 bg-black/80 hover:bg-[#D4AF37] hover:text-black text-white border border-white/40 transition-colors shadow-md cursor-pointer"
                         aria-label="Ver imagem anterior"
                       >
                         <ChevronLeft size={18} />
@@ -103,7 +103,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                       <button
                         type="button"
                         onClick={(e) => handleNextImage(service.id, images.length, e)}
-                        className="absolute right-2.5 top-1/2 -translate-y-1/2 z-20 p-2 sm:p-2.5 bg-black/85 hover:bg-[#A855F7] text-white border-2 border-white shadow-[2px_2px_0px_#000000] transition-colors"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 z-20 p-2.5 sm:p-3 bg-black/80 hover:bg-[#D4AF37] hover:text-black text-white border border-white/40 transition-colors shadow-md cursor-pointer"
                         aria-label="Ver imagem seguinte"
                       >
                         <ChevronRight size={18} />
@@ -111,20 +111,20 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
                     )}
 
                     {/* Tag badge */}
-                    <div className="absolute top-3 left-3 bg-black/90 border border-[#A855F7] text-white px-2.5 py-1 text-xs font-bold tracking-wider uppercase flex items-center gap-1.5 shadow-[2px_2px_0px_#A855F7] pointer-events-none">
-                      <Sparkles size={12} className="text-[#A855F7]" />
+                    <div className="absolute top-3.5 left-3.5 bg-black/85 border border-[#D4AF37]/80 text-[#D4AF37] px-3 py-1 text-xs font-semibold tracking-wider uppercase flex items-center gap-1.5 shadow-sm pointer-events-none">
+                      <SparkleIcon size={11} color="#D4AF37" />
                       <span>{translatedService.tag}</span>
                     </div>
 
                     {/* Image dots / counter */}
                     {images.length > 1 && (
-                      <div className="absolute bottom-3 inset-x-0 flex items-center justify-center gap-1.5 z-10 pointer-events-none">
+                      <div className="absolute bottom-3.5 inset-x-0 flex items-center justify-center gap-1.5 z-10 pointer-events-none">
                         {images.map((_, dotIdx) => (
                           <span
                             key={dotIdx}
-                            className={`h-2 rounded-full transition-all ${
+                            className={`h-1.5 rounded-full transition-all ${
                               dotIdx === currentIndex
-                                ? 'w-6 bg-[#A855F7] shadow-[0px_0px_4px_#A855F7]'
+                                ? 'w-6 bg-[#D4AF37] shadow-sm'
                                 : 'w-2 bg-white/70'
                             }`}
                           />
@@ -134,30 +134,30 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
 
                     {/* Popular indicator if true */}
                     {service.popular && (
-                      <div className="absolute top-3 right-3 bg-[#A855F7] text-white px-2.5 py-1 text-xs font-extrabold uppercase tracking-wider border border-black shadow-[2px_2px_0px_#000000] pointer-events-none">
+                      <div className="absolute top-3.5 right-3.5 bg-gradient-to-r from-[#DFBA73] to-[#C5A880] text-[#0A0A0A] px-3 py-1 text-xs font-bold uppercase tracking-wider shadow-sm pointer-events-none">
                         Destaque
                       </div>
                     )}
                   </div>
 
-                  {/* Card Content (Duration estimate removed as requested) */}
-                  <div className="p-6 space-y-3">
-                    <h3 className="text-xl sm:text-2xl font-extrabold text-white font-display">
+                  {/* Card Content */}
+                  <div className="p-6 sm:p-8 space-y-3">
+                    <h3 className="text-2xl font-normal text-stone-950 font-display">
                       {translatedService.name}
                     </h3>
 
-                    <p className="text-sm text-zinc-300 leading-relaxed">
+                    <p className="text-sm text-stone-600 leading-relaxed font-normal">
                       {translatedService.desc}
                     </p>
                   </div>
                 </div>
 
                 {/* Footer Action */}
-                <div className="p-6 pt-2">
+                <div className="p-6 sm:p-8 pt-0">
                   <button
                     type="button"
                     onClick={() => onSelectService(service.id)}
-                    className="neo-btn-purple w-full flex items-center justify-center gap-2 py-3 px-4 text-xs sm:text-sm font-extrabold uppercase tracking-wider cursor-pointer"
+                    className="luxury-btn-dark w-full flex items-center justify-center gap-2.5 py-3.5 px-4 text-xs font-bold uppercase tracking-widest cursor-pointer"
                   >
                     <span>{t.servicesSection.bookThis}</span>
                     <ArrowRight size={16} />
@@ -169,19 +169,19 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({
         </div>
 
         {/* Bottom Helper Bar */}
-        <div className="mt-12 p-6 bg-zinc-900 border-2 border-dashed border-zinc-700 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="p-2 bg-[#A855F7] text-white border border-black shrink-0">
+        <div className="mt-14 p-6 sm:p-8 bg-stone-50 border border-stone-200 flex flex-col sm:flex-row items-center justify-between gap-5">
+          <div className="flex items-center gap-4">
+            <div className="p-3 bg-amber-100 text-[#B38715] border border-[#D4AF37]/40 shrink-0">
               <Check size={20} />
             </div>
             <div>
-              <p className="text-sm font-bold text-white">Não tens a certeza de qual serviço escolher?</p>
-              <p className="text-xs text-zinc-400">Podes enviar a tua referência de unhas ou pedir orientação à Cataleya no WhatsApp!</p>
+              <p className="text-sm font-bold text-stone-900">Não tens a certeza de qual serviço escolher?</p>
+              <p className="text-xs text-stone-600 mt-0.5">Podes enviar a tua referência de unhas ou pedir orientação à Cataleya no WhatsApp!</p>
             </div>
           </div>
           <a
             href="#agendamento"
-            className="neo-btn-black shrink-0 px-4 py-2.5 text-xs font-extrabold uppercase tracking-wider text-center"
+            className="luxury-btn-gold shrink-0 px-6 py-3 text-xs font-bold uppercase tracking-widest text-center"
           >
             Fazer Pergunta Rápida
           </a>

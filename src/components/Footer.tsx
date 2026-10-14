@@ -10,20 +10,20 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ t, onOpenLegal }) => {
   return (
-    <footer className="bg-[#09090b] text-zinc-300 border-t-4 border-black relative">
+    <footer className="bg-[#080808] text-zinc-300 border-t border-[#D4AF37]/25 relative">
       
       {/* Upper Footer: Brand, Navigation & Contact */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10">
           
           {/* Brand Info & Mission (Cols 1-5) */}
           <div className="lg:col-span-5 space-y-4">
-            <a href="#" className="flex items-center gap-2 text-2xl font-extrabold text-white font-display">
+            <a href="#" className="flex items-center gap-2 text-2xl font-normal text-white font-display">
               <span>Nailz by Cataleya</span>
-              <SparkleIcon size={16} className="text-[#A855F7]" />
+              <SparkleIcon size={16} color="#D4AF37" />
             </a>
 
-            <p className="text-sm text-zinc-400 max-w-sm leading-relaxed">
+            <p className="text-sm text-zinc-400 max-w-sm leading-relaxed font-normal">
               {t.footer.brandDesc}
             </p>
 
@@ -32,72 +32,72 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenLegal }) => {
                 href={BUSINESS_INFO.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 bg-zinc-900 hover:bg-[#A855F7] text-white border border-zinc-700 transition-colors"
+                className="p-2.5 bg-[#141414] hover:bg-[#D4AF37] hover:text-black text-white border border-zinc-800 hover:border-[#D4AF37] transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram size={18} />
+                <Instagram size={17} />
               </a>
 
               <a
                 href={BUSINESS_INFO.tiktokUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 bg-zinc-900 hover:bg-[#A855F7] text-white border border-zinc-700 transition-colors"
+                className="p-2.5 bg-[#141414] hover:bg-[#D4AF37] hover:text-black text-white border border-zinc-800 hover:border-[#D4AF37] transition-colors"
                 aria-label="TikTok"
               >
-                <Video size={18} />
+                <Video size={17} />
               </a>
 
               <a
                 href={BUSINESS_INFO.facebookUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 bg-zinc-900 hover:bg-[#A855F7] text-white border border-zinc-700 transition-colors"
+                className="p-2.5 bg-[#141414] hover:bg-[#D4AF37] hover:text-black text-white border border-zinc-800 hover:border-[#D4AF37] transition-colors"
                 aria-label="Facebook"
               >
-                <Share2 size={18} />
+                <Share2 size={17} />
               </a>
             </div>
           </div>
 
           {/* Quick Navigation (Cols 6-8) */}
           <div className="lg:col-span-3 space-y-4">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-white border-b border-zinc-800 pb-2">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#D4AF37] border-b border-zinc-800 pb-2">
               {t.footer.quickLinks}
             </h4>
-            <ul className="space-y-2 text-sm font-medium">
+            <ul className="space-y-2 text-xs uppercase tracking-wider font-medium text-zinc-400">
               <li>
-                <a href="#servicos" className="hover:text-[#A855F7] transition-colors">
+                <a href="#servicos" className="hover:text-[#D4AF37] transition-colors">
                   {t.nav.services}
                 </a>
               </li>
               <li>
-                <a href="#galeria" className="hover:text-[#A855F7] transition-colors">
+                <a href="#galeria" className="hover:text-[#D4AF37] transition-colors">
                   {t.nav.gallery}
                 </a>
               </li>
               <li>
-                <a href="#sobre" className="hover:text-[#A855F7] transition-colors">
+                <a href="#sobre" className="hover:text-[#D4AF37] transition-colors">
                   {t.nav.about}
                 </a>
               </li>
               <li>
-                <a href="#estudio" className="hover:text-[#A855F7] transition-colors">
+                <a href="#estudio" className="hover:text-[#D4AF37] transition-colors">
                   {t.nav.studio}
                 </a>
               </li>
               <li>
-                <a href="#avaliacoes" className="hover:text-[#A855F7] transition-colors">
+                <a href="#avaliacoes" className="hover:text-[#D4AF37] transition-colors">
                   {t.nav.reviews}
                 </a>
               </li>
               <li>
-                <a href="#agendamento" className="hover:text-[#A855F7] transition-colors">
+                <a href="#agendamento" className="hover:text-[#D4AF37] transition-colors">
                   {t.nav.booking}
                 </a>
               </li>
               <li>
-                <a href="#faq" className="hover:text-[#A855F7] transition-colors">
+                <a href="#faq" className="hover:text-[#D4AF37] transition-colors">
                   {t.nav.faq}
                 </a>
               </li>
@@ -106,23 +106,23 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenLegal }) => {
 
           {/* Contact Details (Cols 9-12) */}
           <div className="lg:col-span-4 space-y-4">
-            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-white border-b border-zinc-800 pb-2">
+            <h4 className="text-xs font-mono font-bold uppercase tracking-widest text-[#D4AF37] border-b border-zinc-800 pb-2">
               Contacto & Localização
             </h4>
 
-            <div className="space-y-2.5 text-xs text-zinc-300">
+            <div className="space-y-2.5 text-xs text-zinc-400">
               <p className="flex items-center gap-2">
-                <MapPin size={15} className="text-[#A855F7] shrink-0" />
+                <MapPin size={15} className="text-[#D4AF37] shrink-0" />
                 <span>{BUSINESS_INFO.address}</span>
               </p>
               <p className="flex items-center gap-2">
-                <Phone size={15} className="text-[#A855F7] shrink-0" />
-                <a href={`tel:${BUSINESS_INFO.whatsappNumber}`} className="hover:text-white font-bold">
+                <Phone size={15} className="text-[#D4AF37] shrink-0" />
+                <a href={`tel:${BUSINESS_INFO.whatsappNumber}`} className="hover:text-white font-semibold">
                   {BUSINESS_INFO.phone}
                 </a>
               </p>
               <p className="flex items-center gap-2">
-                <Mail size={15} className="text-[#A855F7] shrink-0" />
+                <Mail size={15} className="text-[#D4AF37] shrink-0" />
                 <a href={`mailto:${BUSINESS_INFO.email}`} className="hover:text-white">
                   {BUSINESS_INFO.email}
                 </a>
@@ -140,7 +140,7 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenLegal }) => {
             <button
               type="button"
               onClick={() => onOpenLegal('privacy')}
-              className="hover:text-zinc-300 underline underline-offset-4 cursor-pointer"
+              className="hover:text-[#D4AF37] underline underline-offset-4 cursor-pointer transition-colors"
             >
               {t.footer.legalLinks.privacy}
             </button>
@@ -148,7 +148,7 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenLegal }) => {
             <button
               type="button"
               onClick={() => onOpenLegal('terms')}
-              className="hover:text-zinc-300 underline underline-offset-4 cursor-pointer"
+              className="hover:text-[#D4AF37] underline underline-offset-4 cursor-pointer transition-colors"
             >
               {t.footer.legalLinks.terms}
             </button>
@@ -156,7 +156,7 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenLegal }) => {
             <button
               type="button"
               onClick={() => onOpenLegal('ral')}
-              className="hover:text-zinc-300 underline underline-offset-4 cursor-pointer"
+              className="hover:text-[#D4AF37] underline underline-offset-4 cursor-pointer transition-colors"
             >
               {t.footer.legalLinks.ral}
             </button>
@@ -165,7 +165,7 @@ export const Footer: React.FC<FooterProps> = ({ t, onOpenLegal }) => {
               href="https://www.livroreclamacoes.pt"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-zinc-300 underline underline-offset-4 inline-flex items-center gap-1 cursor-pointer"
+              className="hover:text-[#D4AF37] underline underline-offset-4 inline-flex items-center gap-1 cursor-pointer transition-colors"
             >
               <span>{t.footer.complaintBookText}</span>
               <ExternalLink size={11} />

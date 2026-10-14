@@ -49,17 +49,17 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ t }) => {
   const currentItem = activeModalIndex !== null ? GALLERY_ITEMS[activeModalIndex] : null;
 
   return (
-    <section id="galeria" className="py-16 sm:py-20 bg-[#0d0d0d] relative bg-checkered-dark">
+    <section id="galeria" className="py-20 sm:py-24 bg-[#0A0A0A] relative text-white border-t border-zinc-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header (Clean, only "Todas as Artes", no filter badges) */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-zinc-900 border border-zinc-700 text-[#A855F7] text-xs font-bold uppercase tracking-widest shadow-[2px_2px_0px_#A855F7]">
-            <SparkleIcon size={12} className="text-[#A855F7]" />
+        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-16 space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 bg-[#141414] border border-[#D4AF37]/40 text-[#D4AF37] text-xs font-semibold uppercase tracking-widest">
+            <SparkleIcon size={12} color="#D4AF37" />
             <span>{t.gallerySection.kicker}</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight font-display">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-tight font-display">
             {t.gallerySection.title}
           </h2>
 
@@ -68,27 +68,27 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ t }) => {
           </p>
         </div>
 
-        {/* Gallery Grid (No text labels, just pure visuals with sticker cut neo-borders) */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
+        {/* Gallery Grid (No text labels, just pure visuals with luxury gold borders) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
           {GALLERY_ITEMS.map((item, idx) => (
             <div
               key={item.id}
               onClick={() => handleOpenModal(idx)}
-              className="group cursor-pointer bg-[#18181b] p-1.5 sm:p-2 border-2 sm:border-3 border-zinc-700 hover:border-white shadow-[4px_4px_0px_#000000] hover:shadow-[4px_4px_0px_#A855F7] transition-all duration-200"
+              className="group cursor-pointer bg-[#141414] p-1.5 border border-zinc-800 hover:border-[#D4AF37] transition-all duration-300 shadow-lg hover:shadow-[0_8px_30px_rgba(212,175,55,0.15)]"
             >
-              <div className="relative aspect-square overflow-hidden bg-zinc-950 border border-black">
+              <div className="relative aspect-square overflow-hidden bg-zinc-950">
                 <img
                   src={item.image}
                   alt={`Nail Art Cataleya ${idx + 1}`}
                   loading="lazy"
                   decoding="async"
-                  className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-300"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
 
                 {/* Subtle hover icon */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center p-2">
-                  <div className="p-2.5 bg-[#A855F7] text-white border-2 border-black shadow-[2px_2px_0px_#000000]">
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-2">
+                  <div className="p-3 bg-gradient-to-r from-[#DFBA73] to-[#C5A880] text-[#0A0A0A] border border-[#E5C378] shadow-md">
                     <Maximize2 size={18} />
                   </div>
                 </div>
@@ -111,14 +111,14 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ t }) => {
           >
             {/* Top Close Button & Counter */}
             <div className="w-full flex items-center justify-between pb-3 px-1 text-white">
-              <span className="px-2.5 py-1 bg-zinc-900 border border-zinc-700 text-xs font-mono font-bold text-[#A855F7]">
+              <span className="px-3 py-1 bg-[#141414] border border-[#D4AF37]/50 text-xs font-mono font-bold text-[#D4AF37]">
                 {activeModalIndex + 1} / {GALLERY_ITEMS.length}
               </span>
 
               <button
                 type="button"
                 onClick={handleCloseModal}
-                className="neo-btn-black p-2 text-white hover:text-[#A855F7] flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider cursor-pointer"
+                className="p-2 text-zinc-300 hover:text-[#D4AF37] flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest cursor-pointer transition-colors"
                 aria-label="Fechar"
               >
                 <X size={20} />
@@ -127,7 +127,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ t }) => {
             </div>
 
             {/* Media Presentation Box (ONLY Photo) */}
-            <div className="relative w-full max-h-[82vh] bg-black border-4 border-white shadow-[8px_8px_0px_#A855F7] flex items-center justify-center overflow-hidden">
+            <div className="relative w-full max-h-[82vh] bg-black border border-[#D4AF37]/50 shadow-2xl flex items-center justify-center overflow-hidden">
               <img
                 src={currentItem.image}
                 alt={`Nail Art Cataleya Ampliada ${activeModalIndex + 1}`}
@@ -143,7 +143,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ t }) => {
                   e.stopPropagation();
                   handlePrev();
                 }}
-                className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 bg-black/85 hover:bg-[#A855F7] text-white border-2 border-white shadow-[2px_2px_0px_#000000] transition-colors cursor-pointer"
+                className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 bg-black/85 hover:bg-[#D4AF37] hover:text-black text-white border border-[#D4AF37]/40 transition-colors cursor-pointer shadow-md"
                 aria-label="Imagem anterior"
               >
                 <ChevronLeft size={24} />
@@ -156,7 +156,7 @@ export const GallerySection: React.FC<GallerySectionProps> = ({ t }) => {
                   e.stopPropagation();
                   handleNext();
                 }}
-                className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 bg-black/85 hover:bg-[#A855F7] text-white border-2 border-white shadow-[2px_2px_0px_#000000] transition-colors cursor-pointer"
+                className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 bg-black/85 hover:bg-[#D4AF37] hover:text-black text-white border border-[#D4AF37]/40 transition-colors cursor-pointer shadow-md"
                 aria-label="Imagem seguinte"
               >
                 <ChevronRight size={24} />

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { MessageCircle, ArrowUp } from 'lucide-react';
-import { BUSINESS_INFO } from '../data/content';
 
 export const FloatingActions: React.FC = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
@@ -25,7 +24,7 @@ export const FloatingActions: React.FC = () => {
         <button
           type="button"
           onClick={scrollToTop}
-          className="pointer-events-auto p-2.5 bg-zinc-900/90 text-white border-2 border-zinc-700 hover:border-[#A855F7] shadow-[3px_3px_0px_#000000] hover:shadow-[3px_3px_0px_#A855F7] transition-all"
+          className="pointer-events-auto p-2.5 bg-[#141414]/90 text-white border border-[#D4AF37]/50 hover:bg-[#D4AF37] hover:text-black transition-all shadow-lg cursor-pointer"
           aria-label="Voltar ao topo"
         >
           <ArrowUp size={18} />
@@ -35,10 +34,10 @@ export const FloatingActions: React.FC = () => {
       {/* Floating WhatsApp Quick Link */}
       <a
         href="#agendamento"
-        className="pointer-events-auto neo-btn-purple flex items-center gap-2 px-4 py-3 text-xs sm:text-sm font-extrabold uppercase tracking-wider shadow-[4px_4px_0px_#000000] group"
+        className="pointer-events-auto luxury-btn-gold flex items-center gap-2 px-5 py-3 text-xs font-bold uppercase tracking-widest shadow-xl group cursor-pointer"
         title="Agendar no WhatsApp"
       >
-        <MessageCircle size={18} className="text-white group-hover:scale-110 transition-transform" />
+        <MessageCircle size={17} className="text-[#0A0A0A] group-hover:scale-110 transition-transform" />
         <span className="hidden sm:inline">Agendar no WhatsApp</span>
         <span className="sm:hidden">Agendar</span>
       </a>

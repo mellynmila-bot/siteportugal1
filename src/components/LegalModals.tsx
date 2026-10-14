@@ -15,16 +15,16 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="relative max-w-2xl w-full bg-[#18181b] border-4 border-white shadow-[8px_8px_0px_#A855F7] p-6 sm:p-8 text-white max-h-[85vh] overflow-y-auto"
+        className="relative max-w-2xl w-full bg-[#141414] border border-[#D4AF37]/50 shadow-2xl p-6 sm:p-8 text-white max-h-[85vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
         <div className="flex items-center justify-between pb-4 mb-4 border-b border-zinc-800">
           <div className="flex items-center gap-2.5">
-            {type === 'privacy' && <Shield size={20} className="text-[#A855F7]" />}
-            {type === 'terms' && <FileText size={20} className="text-[#A855F7]" />}
-            {type === 'ral' && <Scale size={20} className="text-[#A855F7]" />}
-            <h3 className="text-xl font-extrabold font-display">
+            {type === 'privacy' && <Shield size={20} className="text-[#D4AF37]" />}
+            {type === 'terms' && <FileText size={20} className="text-[#D4AF37]" />}
+            {type === 'ral' && <Scale size={20} className="text-[#D4AF37]" />}
+            <h3 className="text-xl font-normal font-display text-white">
               {type === 'privacy' && 'Política de Privacidade (RGPD)'}
               {type === 'terms' && 'Termos de Serviço & Marcações'}
               {type === 'ral' && 'Resolução Alternativa de Litígios (RAL)'}
@@ -34,21 +34,21 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 bg-black border border-zinc-700 hover:border-white text-zinc-300 hover:text-white"
+            className="p-1.5 text-zinc-400 hover:text-white hover:border-[#D4AF37] border border-zinc-800 transition-colors cursor-pointer"
           >
             <X size={18} />
           </button>
         </div>
 
         {/* Content */}
-        <div className="space-y-4 text-xs sm:text-sm text-zinc-300 leading-relaxed">
+        <div className="space-y-4 text-xs sm:text-sm text-zinc-300 leading-relaxed font-sans">
           {type === 'privacy' && (
             <>
               <p>
                 Em conformidade com o Regulamento Geral sobre a Proteção de Dados (RGPD - Regulamento (UE) 2016/679) e a Lei n.º 58/2019 de Portugal, informamos que os dados pessoais fornecidos (nome, número de telefone e preferências de serviço) destinam-se exclusivamente à gestão de agendamentos e comunicação direta com a cliente no âmbito dos serviços de estética prestados por <strong>Nailz by Cataleya</strong>.
               </p>
               <h4 className="font-bold text-white pt-2">1. Responsável pelo Tratamento:</h4>
-              <p>Firma / Profissional: [Inserir Nome Completo / Nome Comercial], NIF: [000.000.000], com sede/morada em R. Principal, 3100-378 Pombal, Portugal.</p>
+              <p>Nailz by Cataleya, com sede em Pombal, Portugal.</p>
               <h4 className="font-bold text-white pt-2">2. Finalidade e Conservação:</h4>
               <p>Os dados recolhidos através do WhatsApp ou formulário deste website não são partilhados nem comercializados a terceiros e são mantidos unicamente pelo período estritamente necessário à gestão de marcações e histórico de serviços.</p>
               <h4 className="font-bold text-white pt-2">3. Direitos do Titular:</h4>
@@ -75,13 +75,13 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
               <p>
                 Em cumprimento do disposto no artigo 18.º da Lei n.º 144/2015, de 8 de setembro, informa-se que em caso de litígio de consumo, o consumidor pode recorrer a uma Entidade de Resolução Alternativa de Litígios de Consumo (RAL):
               </p>
-              <div className="p-3 bg-black border border-zinc-700 my-2">
+              <div className="p-4 bg-black border border-zinc-800 my-2">
                 <p className="font-bold text-white">CNIACC – Centro Nacional de Informação e Arbitragem de Conflitos de Consumo</p>
                 <p className="text-xs text-zinc-400 mt-1">Faculdade de Direito da Universidade Nova de Lisboa, Campus de Campolide, 1099-032 Lisboa</p>
                 <p className="text-xs text-zinc-400">Telefone: 21 384 74 84 | E-mail: cniacc@unl.pt | Web: www.cniacc.pt</p>
               </div>
               <p>
-                As entidades de resolução alternativa de litígios são independentes e imparciais. Mais informações em Portal do Consumidor (<a href="https://www.consumidor.gov.pt" target="_blank" rel="noopener noreferrer" className="underline text-[#A855F7]">www.consumidor.gov.pt</a>).
+                As entidades de resolução alternativa de litígios são independentes e imparciais. Mais informações em Portal do Consumidor (<a href="https://www.consumidor.gov.pt" target="_blank" rel="noopener noreferrer" className="underline text-[#D4AF37]">www.consumidor.gov.pt</a>).
               </p>
             </>
           )}
@@ -92,7 +92,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
           <button
             type="button"
             onClick={onClose}
-            className="neo-btn-purple px-4 py-2 text-xs font-bold uppercase tracking-wider"
+            className="luxury-btn-gold px-5 py-2.5 text-xs font-bold uppercase tracking-widest cursor-pointer"
           >
             Compreendido & Fechar
           </button>
